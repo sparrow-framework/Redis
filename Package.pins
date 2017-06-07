@@ -1,0 +1,30 @@
+{
+  "autoPin": true,
+  "pins": [
+    {
+      "package": "CHiredis",
+      "reason": null,
+      "repositoryURL": "/Volumes/Macintosh HD 2/Development/GitHub/formbound/CHiredis",
+      "version": "0.1.0"
+    },
+    {
+      "package": "COpenSSL",
+      "reason": null,
+      "repositoryURL": "https://github.com/Zewo/COpenSSL.git",
+      "version": "0.15.0"
+    },
+    {
+      "package": "Venice",
+      "reason": null,
+      "repositoryURL": "https://github.com/Zewo/Venice.git",
+      "version": "0.18.0"
+    },
+    {
+      "package": "Zewo",
+      "reason": null,
+      "repositoryURL": "https://github.com/Zewo/Zewo",
+      "version": "0.13.0"
+    }
+  ],
+  "version": 1
+}
