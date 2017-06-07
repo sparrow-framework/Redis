@@ -9,6 +9,6 @@ let package = Package(
         Target(name: "Redis", dependencies: ["CHiredis"]),
     ],
     dependencies: [
-        .Package(url: "https://github.com/Zewo/Zewo.git", majorVersion: 0, minor: 13),
+        .Package(url: "https://github.com/Zewo/Zewo.git", majorVersion: 0, minor: 14),
     ]
 )
