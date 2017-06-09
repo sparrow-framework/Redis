@@ -1,0 +1,14 @@
+dependencies:
+  pre:
+    - echo "deb [trusted=yes] http://apt.zewo.io ./" | sudo tee -a /etc/apt/sources.list
+    - sudo apt-get update
+    - sudo apt-get install clang-3.6 libicu-dev zewo
+    - sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
+    - sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
+  override:
+    - eval "$(curl -sL https://raw.githubusercontent.com/Zewo/Zewo/master/Scripts/Travis/install.sh)"
+test:
+  override:
+    - ~/.swiftenv/shims/swift build
+    - ~/.swiftenv/shims/swift build --configuration release
+    - env LD_LIBRARY_PATH='/usr/local/lib:/usr/local/opt/libressl/lib' ~/.swiftenv/shims/swift test

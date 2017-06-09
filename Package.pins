@@ -1,24 +1,5 @@
 {
-  "autoPin": true,
-  "pins": [
-    {
-      "package": "COpenSSL",
-      "reason": null,
-      "repositoryURL": "https://github.com/Zewo/COpenSSL.git",
-      "version": "0.15.0"
-    },
-    {
-      "package": "Venice",
-      "reason": null,
-      "repositoryURL": "https://github.com/Zewo/Venice.git",
-      "version": "0.18.0"
-    },
-    {
-      "package": "Zewo",
-      "reason": null,
-      "repositoryURL": "https://github.com/Zewo/Zewo.git",
-      "version": "0.14.0"
-    }
-  ],
+  "autoPin": false,
+  "pins": [],
   "version": 1
 }

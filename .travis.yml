@@ -1,0 +1,21 @@
+os:
+  - linux
+  - osx
+language: generic
+sudo: false
+dist: trusty
+osx_image: xcode8.3
+addons:
+  apt:
+    sources:
+      - sourceline: 'deb [trusted=yes] http://apt.zewo.io ./'
+    packages:
+      - zewo
+install:
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install zewo/tap/zewo; fi
+  - export LD_LIBRARY_PATH=/usr/local/lib
+  - eval "$(curl -sL https://raw.githubusercontent.com/Zewo/Zewo/master/Scripts/Travis/install.sh)"
+script:
+  - bash <(curl -s https://raw.githubusercontent.com/Zewo/Zewo/master/Scripts/Travis/build-test.sh) Redis
+after_success:
+  - bash <(curl -s https://raw.githubusercontent.com/Zewo/Zewo/master/Scripts/Travis/report-coverage.sh)
