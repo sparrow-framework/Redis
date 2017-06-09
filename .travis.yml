@@ -13,7 +13,7 @@ addons:
       - zewo
 install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install zewo/tap/zewo; fi
-  - export LD_LIBRARY_PATH=/usr/local/lib
+  - export LD_LIBRARY_PATH='/usr/local/lib:/usr/local/opt/libressl/lib'
   - eval "$(curl -sL https://raw.githubusercontent.com/Zewo/Zewo/master/Scripts/Travis/install.sh)"
 script:
   - bash <(curl -s https://raw.githubusercontent.com/Zewo/Zewo/master/Scripts/Travis/build-test.sh) Redis
