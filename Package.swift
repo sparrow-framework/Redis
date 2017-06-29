@@ -1,14 +1,14 @@
-// swift-tools-version:3.1
+// swift-tools-version:4.0
 
 import PackageDescription
 
 let package = Package(
     name: "Redis",
-    targets: [
-        Target(name: "CHiredis"),
-        Target(name: "Redis", dependencies: ["CHiredis"]),
-    ],
     dependencies: [
-        .Package(url: "https://github.com/Zewo/Zewo.git", majorVersion: 0, minor: 15),
+        .package(url: "https://github.com/Zewo/Zewo.git", .branch("swift-4")),
+    ],
+    targets: [
+        .target(name: "CHiredis"),
+        .target(name: "Redis", dependencies: ["CHiredis", "Zewo"]),
     ]
 )

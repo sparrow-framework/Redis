@@ -76,14 +76,14 @@ extension Redis {
     }
     
     public func transaction(
-        watching watchedKeys: String...,
+        watching keys: String...,
         discards: Bool = true,
-        body: (Void) throws -> Void
+        body: () throws -> Void
     ) throws -> Reply {
         var reply: Reply
         
-        if watchedKeys.count > 0 {
-            reply = try send("WATCH \(watchedKeys.joined(separator: " "))\r\n")
+        if keys.count > 0 {
+            reply = try send("WATCH \(keys.joined(separator: " "))\r\n")
             
             guard reply.isOK else {
                 throw RedisError.unexpected
